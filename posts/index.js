@@ -1,9 +1,8 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const { randomBytes } = require('crypto');
 
 const app = express();
-const port = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4000;
 // 
 const posts = {};
 
@@ -42,6 +41,6 @@ app.post('/posts', (req, res) => {
     res.status(201).send(posts[id]);
 });
 
-app.listen(port, () => {
-    console.log(`MS posts listening on port ${port}`);
+app.listen(PORT, () => {
+    console.log(`MS posts listening on port ${PORT}`);
 });
